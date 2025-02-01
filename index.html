@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Quote Of The Day</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <!-- <link rel="icon" type="image/png" href="982997.png"> -->
+    <link rel="icon" type="image/png" href="Thinking_Face.webp">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        playfair: ['Playfair', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script src="script.js" defer></script>
+</head>
+<body class="bg-[rgb(232,245,233)] flex items-center justify-center min-h-screen font-playfair">
+
+    <div class="bg-white w-[700px] p-10 rounded-xl text-center shadow-lg">
+        <!-- Title -->
+        <h2 class="text-[32px] font-semibold text-[rgb(40,40,40)] relative mb-10">
+            Quote Of The Day
+            <span class="block w-20 h-[4px] bg-[rgb(76,175,80)] rounded-md absolute left-1/2 -bottom-2 transform -translate-x-1/2"></span>
+        </h2>
+        
+        <!-- Quote Section -->
+        <blockquote id="quote" class="text-[22px] text-[rgb(51,51,51)] min-h-[90px] italic relative before:content-['\"'] after:content-['\"'] before:text-[rgb(76,175,80)] after:text-[rgb(76,175,80)]">
+            Loading...
+        </blockquote>
+        
+        <span id="author" class="block mt-2 text-[rgb(46,125,50)] font-bold relative float-right after:content-[''] after:w-5 after:h-[2px] after:bg-[rgb(76,175,80)] after:absolute after:left-[-30px] after:top-1/2">
+            Loading...
+        </span>
+        
+        <!-- Buttons -->
+        <div class="flex justify-center gap-4 mt-12">
+            <button onclick="getquote(Q_url)" class="bg-[rgb(76,175,80)] text-white rounded-full w-40 h-12 flex items-center justify-center text-lg font-bold transition duration-300 hover:bg-[rgb(56,142,60)] hover:-translate-y-1 shadow-md">
+                New Quote
+            </button>
+            <button class="copy bg-[rgb(76,175,80)] text-white rounded-full w-40 h-12 flex items-center justify-center text-lg font-bold transition duration-300 hover:bg-[rgb(56,142,60)] hover:-translate-y-1 shadow-md">
+                Copy
+            </button>
+            <span id="tooltip" class="hidden bg-white text-[rgb(46,125,50)] font-bold rounded-md h-12 w-16 flex items-center justify-center shadow-md">
+                Copied!
+            </span>
+        </div>
+    </div>
+
+</body>
+</html>
